@@ -65,16 +65,29 @@ class GetMovie extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="quizz">
         <MovieCard
           posterUrl={this.state.movies[this.state.goodAnswer].posterUrl}
         ></MovieCard>
-        <button>{this.state.movies[0].title}</button>
-        <button>{this.state.movies[1].title}</button>
-        <button>{this.state.movies[2].title}</button>
-        <button>{this.state.movies[3].title}</button>
+
+        <div id="answer">
+          <div>
+            <button className="answerCase">{this.state.movies[0].title}</button>
+            <button className="answerCase">{this.state.movies[1].title}</button>
+          </div>
+          <div>
+            <button className="answerCase">{this.state.movies[2].title}</button>
+            <button className="answerCase">{this.state.movies[3].title}</button>
+          </div>
+        </div>
       </div>
     );
   }
 }
 export default GetMovie;
+
+/*<button>{this.state.movies[0].title}</button>
+        <button>{this.state.movies[1].title}</button>
+        <button>{this.state.movies[2].title}</button>
+        <button>{this.state.movies[3].title}</button>
+      </div>*/

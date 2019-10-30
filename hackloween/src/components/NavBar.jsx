@@ -11,6 +11,10 @@ class NavBar extends React.Component {
     return (
       <div className="NavBar">
         <Link to="/">Home</Link>
+        {/* TEST INCREMENT BUTTON
+        <button type="button" onClick={this.props.Scoring}>
+          Test Increment
+        </button>*/}
         Your Score : {this.props.displayScore} pts
       </div>
     );

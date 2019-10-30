@@ -10,7 +10,7 @@ class LetsPlay extends React.Component {
   }
 
   incrementScore = () => {
-    this.setState({ ScoreCount: this.state.ScoreCount });
+    this.setState({ ScoreCount: this.state.ScoreCount + 1 });
   };
 
   render() {

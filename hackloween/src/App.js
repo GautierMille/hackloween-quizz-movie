@@ -3,7 +3,9 @@ import "./App.scss";
 import { Switch, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import LetsPlay from "./components/LetsPlay";
+
 import Countdown from "./components/Countdown";
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         <Route path="/LetsPlay" component={LetsPlay} />
       </Switch>
       <Countdown />
+
     </div>
   );
 }

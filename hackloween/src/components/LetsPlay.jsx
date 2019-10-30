@@ -7,9 +7,7 @@ function LetsPlay() {
       <div id="navbar"></div>
       <div id="timer"></div>
       <div id="quizz">
-        <div id="moviePict">
-          <h1>IMAGE</h1>
-        </div>
+        <div id="moviePict"></div>
         <div id="answer">
           <div>
             <button className="answerCase">Answer 1</button>

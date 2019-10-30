@@ -1,4 +1,5 @@
 import React from "react";
+import "./style/Countdown.scss";
 
 class CountDown extends React.Component {
   constructor(props) {
@@ -16,7 +17,12 @@ class CountDown extends React.Component {
   };
 
   render() {
-    return <p id="count">Remaining time : {this.state.count}</p>;
+    return (
+      <p id={`${this.state.count}` <= 5 ? "blabla" : "count"}>
+        Remaining time
+        <br /> {this.state.count}
+      </p>
+    );
   }
 }
 

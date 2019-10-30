@@ -18,7 +18,12 @@ class CountDown extends React.Component {
 
   render() {
     return (
-      <p id={`${this.state.count}` <= 5 ? "blabla" : "count"}>
+      <p
+        onClick={() => {
+          this.props.Scoring();
+        }}
+        id={`${this.state.count}` <= 5 ? "blabla" : "count"}
+      >
         Remaining time
         <br /> {this.state.count}
       </p>

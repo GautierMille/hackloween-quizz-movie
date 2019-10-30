@@ -1,0 +1,22 @@
+.NavBar {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 48px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 25px;
+  align-items: center;
+
+  #textNavBar {
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 25px;
+    align-items: center;
+    background: linear-gradient(white, rgb(1, 190, 1));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

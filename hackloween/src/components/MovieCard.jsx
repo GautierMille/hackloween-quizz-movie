@@ -8,7 +8,7 @@ class MovieCard extends React.Component {
 
   render() {
     return (
-      <div id="moviePict">
+      <div>
         <img src={this.props.posterUrl}></img>
         <h1>{this.props.title}</h1>
       </div>

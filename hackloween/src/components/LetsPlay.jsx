@@ -21,9 +21,21 @@ class LetsPlay extends React.Component {
     this.setState({ count: this.state.count - 1 });
   };
 
+  timeReset = () => {
+    this.setState({
+      count: 20
+    });
+  };
+
   incrementScore = () => {
     this.setState({
       ScoreCount: this.state.ScoreCount + this.state.count
+    });
+  };
+
+  wrong = () => {
+    this.setState({
+      ScoreCount: this.state.ScoreCount - 5
     });
   };
 
@@ -33,15 +45,20 @@ class LetsPlay extends React.Component {
         <NavBar displayScore={this.state.ScoreCount} />
         <p
           id="Countdown"
-          onClick={() => {
+          /*onClick={() => {
             this.incrementScore();
-          }}
+          }}*/
           id={`${this.state.count}` <= 5 ? "blabla" : "count"}
         >
           Remaining time
           <br /> {this.state.count}
         </p>
-        <GetMovie />
+        <GetMovie
+          wrong={this.wrong}
+          incrementScore={this.incrementScore}
+          timeReset={this.timeReset}
+          time={this.time}
+        />
       </div>
     );
   }

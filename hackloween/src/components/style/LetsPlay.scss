@@ -10,6 +10,10 @@
     width: 60vw;
     height: 90vw;
     background-size: 100% 100%;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   #count {

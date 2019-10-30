@@ -21,15 +21,12 @@ class GetMovie extends React.Component {
   }
   componentDidMount() {
     this.getMovie();
-    //this.getAnswers();
     this.goodAnswer();
   }
   getMovie() {
     axios
       .get("https://hackathon-wild-hackoween.herokuapp.com/movies")
-      // Extract the DATA from the received response
       .then(response => response.data)
-      // Use this data to update the state
       .then(data => {
         this.setState({
           movies: data.movies.sort(() => Math.random() - 0.5) //[Math.floor(Math.random() * Math.floor(82))]
@@ -37,30 +34,26 @@ class GetMovie extends React.Component {
       });
   }
 
-  /*getAnswers() {
-    let movie1 = Math.floor(Math.random() * Math.floor(82));
-    let movie2 = Math.floor(Math.random() * Math.floor(82));
-    let movie3 = Math.floor(Math.random() * Math.floor(82));
-    let movie4 = Math.floor(Math.random() * Math.floor(82));
-    axios
-      .get("https://hackathon-wild-hackoween.herokuapp.com/movies")
-      // Extract the DATA from the received response
-      .then(response => response.data)
-      // Use this data to update the state
-      .then(data => {
-        this.setState({
-          answers: [
-            data.movies[movie1],
-            data.movies[movie2],
-            data.movies[movie3],
-            data.movies[movie4]
-          ]
-        });
-      });
-  }*/
   goodAnswer() {
     let response = Math.floor(Math.random() * 3);
     this.setState({ goodAnswer: response });
+  }
+
+  checkAnswer = event => {
+    const content = event.target.innerHTML;
+    if (content === this.state.movies[this.state.goodAnswer].title) {
+      this.props.incrementScore();
+      this.getMovie();
+      this.props.timeReset();
+    } else {
+      this.props.wrong();
+      this.playFalse();
+    }
+  };
+
+  playFalse() {
+    const falseAnswer = new Audio("/sounds/wrong.mp3");
+    falseAnswer.play();
   }
 
   render() {
@@ -72,12 +65,20 @@ class GetMovie extends React.Component {
 
         <div id="answer">
           <div>
-            <button className="answerCase">{this.state.movies[0].title}</button>
-            <button className="answerCase">{this.state.movies[1].title}</button>
+            <button onClick={this.checkAnswer} className="answerCase">
+              {this.state.movies[0].title}
+            </button>
+            <button onClick={this.checkAnswer} className="answerCase">
+              {this.state.movies[1].title}
+            </button>
           </div>
           <div>
-            <button className="answerCase">{this.state.movies[2].title}</button>
-            <button className="answerCase">{this.state.movies[3].title}</button>
+            <button onClick={this.checkAnswer} className="answerCase">
+              {this.state.movies[2].title}
+            </button>
+            <button onClick={this.checkAnswer} className="answerCase">
+              {this.state.movies[3].title}
+            </button>
           </div>
         </div>
       </div>

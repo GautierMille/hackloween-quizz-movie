@@ -21,7 +21,6 @@ class GetMovie extends React.Component {
   }
   componentDidMount() {
     this.getMovie();
-    //this.getAnswers();
     this.goodAnswer();
   }
   getMovie() {
@@ -37,27 +36,6 @@ class GetMovie extends React.Component {
       });
   }
 
-  /*getAnswers() {
-    let movie1 = Math.floor(Math.random() * Math.floor(82));
-    let movie2 = Math.floor(Math.random() * Math.floor(82));
-    let movie3 = Math.floor(Math.random() * Math.floor(82));
-    let movie4 = Math.floor(Math.random() * Math.floor(82));
-    axios
-      .get("https://hackathon-wild-hackoween.herokuapp.com/movies")
-      // Extract the DATA from the received response
-      .then(response => response.data)
-      // Use this data to update the state
-      .then(data => {
-        this.setState({
-          answers: [
-            data.movies[movie1],
-            data.movies[movie2],
-            data.movies[movie3],
-            data.movies[movie4]
-          ]
-        });
-      });
-  }*/
   goodAnswer() {
     let response = Math.floor(Math.random() * 3);
     this.setState({ goodAnswer: response });

@@ -21,7 +21,7 @@ class GetMovie extends React.Component {
   }
   componentDidMount() {
     this.getMovie();
-    this.getAnswers();
+    //this.getAnswers();
     this.goodAnswer();
   }
   getMovie() {
@@ -32,12 +32,12 @@ class GetMovie extends React.Component {
       // Use this data to update the state
       .then(data => {
         this.setState({
-          movies: data.movies[Math.floor(Math.random() * Math.floor(82))]
+          movies: data.movies.sort(() => Math.random() - 0.5) //[Math.floor(Math.random() * Math.floor(82))]
         });
       });
   }
 
-  getAnswers() {
+  /*getAnswers() {
     let movie1 = Math.floor(Math.random() * Math.floor(82));
     let movie2 = Math.floor(Math.random() * Math.floor(82));
     let movie3 = Math.floor(Math.random() * Math.floor(82));
@@ -57,7 +57,7 @@ class GetMovie extends React.Component {
           ]
         });
       });
-  }
+  }*/
   goodAnswer() {
     let response = Math.floor(Math.random() * 3);
     this.setState({ goodAnswer: response });
@@ -67,12 +67,12 @@ class GetMovie extends React.Component {
     return (
       <div>
         <MovieCard
-          posterUrl={this.state.answers[this.state.goodAnswer].posterUrl}
+          posterUrl={this.state.movies[this.state.goodAnswer].posterUrl}
         ></MovieCard>
-        <button>{this.state.answers[0].title}</button>
-        <button>{this.state.answers[1].title}</button>
-        <button>{this.state.answers[2].title}</button>
-        <button>{this.state.answers[3].title}</button>
+        <button>{this.state.movies[0].title}</button>
+        <button>{this.state.movies[1].title}</button>
+        <button>{this.state.movies[2].title}</button>
+        <button>{this.state.movies[3].title}</button>
       </div>
     );
   }

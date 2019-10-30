@@ -11,6 +11,21 @@
     height: 90vw;
     background-image: url("/zombie.jpeg");
     background-size: 100% 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .blur {
+      border: 1px solid white;
+      width: 33%;
+      height: 25%;
+      background: rgb(20, 20, 20);
+    }
+    .noBlur {
+      border: 1px solid white;
+      width: 33%;
+      height: 25%;
+      background: rgba(20, 20, 20, 0);
+    }
   }
 
   #answer {

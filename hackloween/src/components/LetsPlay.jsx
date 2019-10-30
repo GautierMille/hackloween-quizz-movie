@@ -80,13 +80,6 @@ class LetsPlay extends React.Component {
           <br /> {this.state.count}
         </p>
 
-        <GetMovie
-          wrong={this.wrong}
-          incrementScore={this.incrementScore}
-          timeReset={this.timeReset}
-          time={this.time}
-        />
-
         <div className="container">
           <div className="blurTab">
             {this.state.blurTab.map(row =>
@@ -97,9 +90,15 @@ class LetsPlay extends React.Component {
               })
             )}
           </div>
-          <GetMovie className="quizz"></GetMovie>
+          <GetMovie
+            className="quizz"
+            wrong={this.wrong}
+            incrementScore={this.incrementScore}
+            timeReset={this.timeReset}
+            time={this.time}
+          />
+          {/*<GetMovie className="quizz"></GetMovie>*/}
         </div>
-
       </div>
     );
   }

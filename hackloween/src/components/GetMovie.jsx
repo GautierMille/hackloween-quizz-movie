@@ -66,7 +66,7 @@ class GetMovie extends React.Component {
         />
 
         <div className="answer">
-          <div>
+          <div className="answerTab">
             <button onClick={this.checkAnswer} className="answerCase">
               {this.state.movies[0].title}
             </button>
@@ -74,7 +74,7 @@ class GetMovie extends React.Component {
               {this.state.movies[1].title}
             </button>
           </div>
-          <div>
+          <div className="answerTab">
             <button onClick={this.checkAnswer} className="answerCase">
               {this.state.movies[2].title}
             </button>

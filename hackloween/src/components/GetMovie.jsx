@@ -16,10 +16,6 @@ class GetMovie extends React.Component {
     this.state = {
       movies: sampleMovie,
       answers: [sampleMovie, sampleMovie, sampleMovie, sampleMovie],
-      answer1: sampleMovie,
-      answer2: sampleMovie,
-      answer3: sampleMovie,
-      answer4: sampleMovie,
       goodAnswer: 0
     };
   }
@@ -58,11 +54,7 @@ class GetMovie extends React.Component {
             data.movies[movie2],
             data.movies[movie3],
             data.movies[movie4]
-          ],
-          answer1: data.movies[movie1],
-          answer2: data.movies[movie2],
-          answer3: data.movies[movie3],
-          answer4: data.movies[movie4]
+          ]
         });
       });
   }
@@ -77,7 +69,7 @@ class GetMovie extends React.Component {
         <MovieCard
           posterUrl={this.state.answers[this.state.goodAnswer].posterUrl}
         ></MovieCard>
-        <button>{this.state.answers[0].title}`</button>
+        <button>{this.state.answers[0].title}</button>
         <button>{this.state.answers[1].title}</button>
         <button>{this.state.answers[2].title}</button>
         <button>{this.state.answers[3].title}</button>

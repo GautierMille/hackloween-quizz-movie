@@ -1,8 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import NavBar from "./NavBar";
 
 function LetsPlay() {
-  return <Link to="/">Home</Link>;
+  return (
+    <div>
+      <NavBar />
+    </div>
+  );
 }
 
 export default LetsPlay;

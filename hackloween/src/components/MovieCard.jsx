@@ -10,7 +10,7 @@ class MovieCard extends React.Component {
     return (
       <div>
         <img src={this.props.posterUrl}></img>
-        <h1>{this.props.title}</h1>
+        {/* <h1>{this.props.title}</h1>*/}
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
+import "./style/LetsPlay.scss";
 
 let sampleMovie = [
   { id: "" },
@@ -65,12 +66,12 @@ class GetMovie extends React.Component {
 
   render() {
     return (
-      <div id="quizz">
+      <div className="quizz">
         <MovieCard
           posterUrl={this.state.movies[this.state.goodAnswer].posterUrl}
-        ></MovieCard>
+        />
 
-        <div id="answer">
+        <div className="answer">
           <div>
             <button className="answerCase">{this.state.movies[0].title}</button>
             <button className="answerCase">{this.state.movies[1].title}</button>

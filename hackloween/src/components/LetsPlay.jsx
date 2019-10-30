@@ -1,10 +1,11 @@
 import React from "react";
+import NavBar from "./NavBar";
 import "./style/LetsPlay.scss";
 
 function LetsPlay() {
   return (
     <div id="letsPlay">
-      <div id="navbar"></div>
+       <NavBar />
       <div id="timer"></div>
       <div id="quizz">
         <div id="moviePict"></div>
@@ -19,8 +20,7 @@ function LetsPlay() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
+)
+      }
 
 export default LetsPlay;

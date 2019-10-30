@@ -5,7 +5,7 @@ import "./style/LetsPlay.scss";
 function LetsPlay() {
   return (
     <div id="letsPlay">
-       <NavBar />
+      <NavBar />
       <div id="timer"></div>
       <div id="quizz">
         <div id="moviePict"></div>
@@ -20,7 +20,8 @@ function LetsPlay() {
           </div>
         </div>
       </div>
-)
-      }
+    </div>
+  );
+}
 
 export default LetsPlay;

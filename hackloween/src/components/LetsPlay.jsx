@@ -1,6 +1,8 @@
 import React from "react";
 import NavBar from "./NavBar";
 import "./style/LetsPlay.scss";
+import GetMovie from "./GetMovie";
+
 
 class LetsPlay extends React.Component {
   constructor(props) {
@@ -40,6 +42,7 @@ class LetsPlay extends React.Component {
           Remaining time
           <br /> {this.state.count}
         </p>
+        <GetMovie />
         <div id="quizz">
           <div id="moviePict"></div>
           <div id="answer">

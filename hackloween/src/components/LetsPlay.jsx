@@ -3,11 +3,26 @@ import NavBar from "./NavBar";
 import "./style/LetsPlay.scss";
 import Countdown from "./Countdown";
 
-function LetsPlay() {
-  return (
-    <div id="letsPlay">
-      <NavBar />
-      <Countdown />
+class LetsPlay extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ScoreCount: 0
+    };
+  }
+
+  incrementScore = () => {
+    this.setState({ ScoreCount: this.state.ScoreCount + 1 });
+  };
+
+  render() {
+    return (
+      <div id="letsPlay">
+        <NavBar
+          displayScore={this.state.ScoreCount}
+          Scoring={this.incrementScore}
+        />
+        <Countdown />
       <div id="quizz">
         <div id="moviePict"></div>
         <div id="answer">
@@ -21,8 +36,9 @@ function LetsPlay() {
           </div>
         </div>
       </div>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default LetsPlay;

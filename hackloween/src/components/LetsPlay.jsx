@@ -53,7 +53,7 @@ class LetsPlay extends React.Component {
 
   render() {
     return (
-      <div id="letsPlay">
+      <div className="letsPlay">
         <NavBar
           displayScore={this.state.ScoreCount}
           Scoring={this.incrementScore}
@@ -63,14 +63,13 @@ class LetsPlay extends React.Component {
           onClick={() => {
             this.incrementScore();
           }}
-          id={`${this.state.count}` <= 5 ? "blabla" : "count"}
+          id={`${this.state.count}` <= 5 ? "hurryCount" : "count"}
         >
           Remaining time
           <br /> {this.state.count}
         </p>
-
-        <div id="quizz">
-          <div id="moviePict">
+        <div className="container">
+          <div className="blurTab">
             {this.state.blurTab.map(row =>
               row.map(column => {
                 return (
@@ -78,8 +77,8 @@ class LetsPlay extends React.Component {
                 );
               })
             )}
-            <GetMovie />
           </div>
+          <GetMovie className="quizz"></GetMovie>
         </div>
       </div>
     );

@@ -4,6 +4,9 @@ import { Switch, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import LetsPlay from "./components/LetsPlay";
 
+import Countdown from "./components/Countdown";
+
+
 function App() {
   return (
     <div className="App">
@@ -11,6 +14,8 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/LetsPlay" component={LetsPlay} />
       </Switch>
+      <Countdown />
+
     </div>
   );
 }

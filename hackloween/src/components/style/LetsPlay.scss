@@ -9,7 +9,6 @@
     margin: auto;
     width: 60vw;
     height: 90vw;
-    background-image: url("/zombie.jpeg");
     background-size: 100% 100%;
     display: flex;
     flex-wrap: wrap;
@@ -26,6 +25,17 @@
       height: 25%;
       background: rgba(20, 20, 20, 0);
     }
+  }
+
+  #count {
+    color: whitesmoke;
+    font-size: 25px;
+    margin: 15px;
+  }
+  #blabla {
+    font-size: 35px;
+    margin: 3px;
+    color: red;
   }
 
   #answer {

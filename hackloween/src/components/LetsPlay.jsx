@@ -1,21 +1,26 @@
 import React from "react";
 import NavBar from "./NavBar";
 import "./style/LetsPlay.scss";
-import Countdown from "./Countdown";
+import GetMovie from "./GetMovie";
 
 class LetsPlay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       ScoreCount: 0,
+
       blurTab: [
         [true, true, true],
         [true, true, true],
         [true, false, true],
         [true, true, true]
       ]
+      count: 20
+
     };
+    this.counterFunc = setInterval(this.time, 1000);
   }
+
 
   componentDidMount() {
     for (let k = 2000; k <= 20000; k = k + 2000) {
@@ -27,8 +32,19 @@ class LetsPlay extends React.Component {
     }
   }
 
+  time = () => {
+    if (this.state.count <= 0) {
+      clearInterval(this.counterFunc);
+      return;
+    }
+    this.setState({ count: this.state.count - 1 });
+  };
+
+
   incrementScore = () => {
-    this.setState({ ScoreCount: this.state.ScoreCount + 1 });
+    this.setState({
+      ScoreCount: this.state.ScoreCount + this.state.count
+    });
   };
 
   blurFunction = (i, j) => {
@@ -41,6 +57,7 @@ class LetsPlay extends React.Component {
   render() {
     return (
       <div id="letsPlay">
+
         <NavBar
           displayScore={this.state.ScoreCount}
           Scoring={this.incrementScore}
@@ -67,6 +84,19 @@ class LetsPlay extends React.Component {
             </div>
           </div>
         </div>
+
+        <NavBar displayScore={this.state.ScoreCount} />
+        <p
+          id="Countdown"
+          onClick={() => {
+            this.incrementScore();
+          }}
+          id={`${this.state.count}` <= 5 ? "blabla" : "count"}
+        >
+          Remaining time
+          <br /> {this.state.count}
+        </p>
+
       </div>
     );
   }

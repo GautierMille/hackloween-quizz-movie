@@ -14,13 +14,11 @@ class LetsPlay extends React.Component {
         [true, true, true],
         [true, false, true],
         [true, true, true]
-      ]
+      ],
       count: 20
-
     };
     this.counterFunc = setInterval(this.time, 1000);
   }
-
 
   componentDidMount() {
     for (let k = 2000; k <= 20000; k = k + 2000) {
@@ -40,7 +38,6 @@ class LetsPlay extends React.Component {
     this.setState({ count: this.state.count - 1 });
   };
 
-
   incrementScore = () => {
     this.setState({
       ScoreCount: this.state.ScoreCount + this.state.count
@@ -57,35 +54,10 @@ class LetsPlay extends React.Component {
   render() {
     return (
       <div id="letsPlay">
-
         <NavBar
           displayScore={this.state.ScoreCount}
           Scoring={this.incrementScore}
         />
-        <Countdown />
-        <div id="quizz">
-          <div id="moviePict">
-            {this.state.blurTab.map(row =>
-              row.map(column => {
-                return (
-                  <div className={column === true ? "blur" : "noBlur"}></div>
-                );
-              })
-            )}
-          </div>
-          <div id="answer">
-            <div>
-              <button className="answerCase">Answer 1</button>
-              <button className="answerCase">Answer 2</button>
-            </div>
-            <div>
-              <button className="answerCase">Answer 3</button>
-              <button className="answerCase">Answer 4</button>
-            </div>
-          </div>
-        </div>
-
-        <NavBar displayScore={this.state.ScoreCount} />
         <p
           id="Countdown"
           onClick={() => {
@@ -97,6 +69,18 @@ class LetsPlay extends React.Component {
           <br /> {this.state.count}
         </p>
 
+        <div id="quizz">
+          <div id="moviePict">
+            {this.state.blurTab.map(row =>
+              row.map(column => {
+                return (
+                  <div className={column === true ? "blur" : "noBlur"}></div>
+                );
+              })
+            )}
+            <GetMovie />
+          </div>
+        </div>
       </div>
     );
   }

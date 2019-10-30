@@ -1,15 +1,19 @@
 import React from "react";
 import GetMovie from "./components/GetMovie";
 import "./App.scss";
+import { Switch, Route } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import LetsPlay from "./components/LetsPlay";
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <GetMovie />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/LetsPlay" component={LetsPlay} />
+      </Switch>
+    </div>
+  );
 }
 
 export default App;

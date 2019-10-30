@@ -73,9 +73,7 @@ class LetsPlay extends React.Component {
             {this.state.blurTab.map(row =>
               row.map(column => {
                 return (
-                  <div className={column === true ? "blur" : "noBlur"}>
-                    blablabla
-                  </div>
+                  <div className={column === true ? "blur" : "noBlur"}></div>
                 );
               })
             )}

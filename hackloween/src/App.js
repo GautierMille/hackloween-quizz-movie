@@ -7,7 +7,6 @@ import LetsPlay from "./components/LetsPlay";
 function App() {
   return (
     <div className="App">
-      <h1>Helloween !</h1>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/LetsPlay" component={LetsPlay} />

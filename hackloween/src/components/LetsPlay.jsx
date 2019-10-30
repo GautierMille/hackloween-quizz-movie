@@ -1,8 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import "./style/LetsPlay.scss";
 
 function LetsPlay() {
-  return <Link to="/">Home</Link>;
+  return (
+    <div id="letsPlay">
+      <div id="navbar"></div>
+      <div id="timer"></div>
+      <div id="quizz">
+        <div id="moviePict">
+          <h1>IMAGE</h1>
+        </div>
+        <div id="awnser">
+          <div>
+            <button className="awnserCase">Awnser 1</button>
+            <button className="awnserCase">Awnser 2</button>
+          </div>
+          <div>
+            <button className="awnserCase">Awnser 3</button>
+            <button className="awnserCase">Awnser 4</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default LetsPlay;

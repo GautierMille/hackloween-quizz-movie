@@ -1,12 +1,13 @@
 import React from "react";
 import NavBar from "./NavBar";
 import "./style/LetsPlay.scss";
+import Countdown from "./Countdown";
 
 function LetsPlay() {
   return (
     <div id="letsPlay">
       <NavBar />
-      <div id="timer"></div>
+      <Countdown />
       <div id="quizz">
         <div id="moviePict"></div>
         <div id="answer">

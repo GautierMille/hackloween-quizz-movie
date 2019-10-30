@@ -25,13 +25,14 @@ class LetsPlay extends React.Component {
     this.setState({
       count: 20
     });
-    this.counterFunc = setInterval(this.time, 1000);
   };
 
   incrementScore = () => {
     this.setState({
       ScoreCount: this.state.ScoreCount + this.state.count
     });
+    clearInterval(this.counterFunc);
+    this.counterFunc = setInterval(this.time, 1000);
   };
 
   wrong = () => {

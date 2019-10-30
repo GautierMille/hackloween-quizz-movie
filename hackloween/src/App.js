@@ -1,15 +1,15 @@
 import React from "react";
+import GetMovie from "./components/GetMovie";
 import "./App.scss";
 
-
-function App() {
-  return (
-    <div className="App">
-
-      <h1>Helloween !</h1>
-
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <GetMovie />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -44,6 +44,7 @@ class GetMovie extends React.Component {
     if (content === this.state.movies[this.state.goodAnswer].title) {
       this.props.incrementScore();
       this.getMovie();
+      this.goodAnswer();
       this.props.timeReset();
     } else {
       this.props.wrong();

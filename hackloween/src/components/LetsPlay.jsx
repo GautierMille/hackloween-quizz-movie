@@ -18,25 +18,24 @@ class LetsPlay extends React.Component {
   }
 
   componentDidMount() {
-    this.blurFunction();
+    for (let k = 2000; k <= 20000; k = k + 2000) {
+      setTimeout(() => {
+        let i = Math.floor(Math.random() * 4);
+        let j = Math.floor(Math.random() * 3);
+        this.blurFunction(i, j);
+      }, k);
+    }
   }
 
   incrementScore = () => {
     this.setState({ ScoreCount: this.state.ScoreCount + 1 });
   };
 
-  blurFunction = () => {
-    for (let i = 0; i <= 3; i++) {
-      for (let j = 0; j <= 2; j++) {
-        for (let k = 2000; k <= 20000; k = k + 2000) {
-          setTimeout(() => {
-            let arr = this.state.blurTab;
-            arr[i][j] = false;
-            this.setState({ blurTab: arr });
-          }, k);
-        }
-      }
-    }
+  blurFunction = (i, j) => {
+    let arr = this.state.blurTab;
+    arr[i][j] = false;
+    this.setState({ blurTab: arr });
+    console.log(i, j);
   };
 
   render() {

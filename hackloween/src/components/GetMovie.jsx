@@ -16,7 +16,8 @@ class GetMovie extends React.Component {
     this.state = {
       movies: sampleMovie,
       answers: [sampleMovie, sampleMovie, sampleMovie, sampleMovie],
-      goodAnswer: 0
+      goodAnswer: 0,
+      questionNumber: 0
     };
   }
   componentDidMount() {
@@ -61,6 +62,7 @@ class GetMovie extends React.Component {
   goodAnswer() {
     let response = Math.floor(Math.random() * 3);
     this.setState({ goodAnswer: response });
+    this.setState({ questionNumber: this.state.questionNumber + 1 });
   }
 
   render() {

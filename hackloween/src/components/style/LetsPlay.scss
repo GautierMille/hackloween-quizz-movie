@@ -29,13 +29,11 @@
     }
   }
   .blur {
-    border: 1px solid white;
     width: calc(60vw / 3);
     height: calc(90vw / 4);
     background: rgb(20, 20, 20);
   }
   .noBlur {
-    border: 1px solid white;
     width: calc(60vw / 3);
     height: calc(90vw / 4);
     background: rgba(20, 20, 20, 0);

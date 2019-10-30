@@ -38,9 +38,23 @@ class LetsPlay extends React.Component {
     this.setState({ count: this.state.count - 1 });
   };
 
+  timeReset = () => {
+    this.setState({
+      count: 20
+    });
+  };
+
   incrementScore = () => {
     this.setState({
       ScoreCount: this.state.ScoreCount + this.state.count
+    });
+    clearInterval(this.counterFunc);
+    this.counterFunc = setInterval(this.time, 1000);
+  };
+
+  wrong = () => {
+    this.setState({
+      ScoreCount: this.state.ScoreCount - 5
     });
   };
 
@@ -60,14 +74,12 @@ class LetsPlay extends React.Component {
         />
         <p
           id="Countdown"
-          onClick={() => {
-            this.incrementScore();
-          }}
           id={`${this.state.count}` <= 5 ? "hurryCount" : "count"}
         >
           Remaining time
           <br /> {this.state.count}
         </p>
+
         <div className="container">
           <div className="blurTab">
             {this.state.blurTab.map(row =>
@@ -78,7 +90,14 @@ class LetsPlay extends React.Component {
               })
             )}
           </div>
-          <GetMovie className="quizz"></GetMovie>
+          <GetMovie
+            className="quizz"
+            wrong={this.wrong}
+            incrementScore={this.incrementScore}
+            timeReset={this.timeReset}
+            time={this.time}
+          />
+          {/*<GetMovie className="quizz"></GetMovie>*/}
         </div>
       </div>
     );

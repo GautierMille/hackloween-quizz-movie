@@ -16,7 +16,7 @@ class CountDown extends React.Component {
   };
 
   render() {
-    return <p id="count">count : {this.state.count}</p>;
+    return <p id="count">Remaining time : {this.state.count}</p>;
   }
 }
 

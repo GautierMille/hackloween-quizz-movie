@@ -7,11 +7,20 @@
   left: 0;
 }
 
-.jumperOn img {
+/*.jumperOn img {
   z-index: 99;
   width: 100vw;
   height: 100vh;
   position: absolute;
   top: -138px;
   left: 0;
+}*/
+
+.jumperOn img {
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: -138px;
+  left: -20vw;
 }

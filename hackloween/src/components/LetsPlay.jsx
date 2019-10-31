@@ -96,6 +96,7 @@ class LetsPlay extends React.Component {
           <Link to="/">
             <button className="startagain">
               <p>START AGAIN (and try to make a better score ass***)</p>
+              <img src="slender.gif" />
             </button>
           </Link>
         </div>

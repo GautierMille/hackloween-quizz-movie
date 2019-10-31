@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "./NavBar";
 import "./style/LetsPlay.scss";
+import "./style/LetsPlayDesktop.scss";
 import GetMovie from "./GetMovie";
 
 class LetsPlay extends React.Component {

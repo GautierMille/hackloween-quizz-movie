@@ -24,11 +24,11 @@ class GetMovie extends React.Component {
       jumpScares: [
         "conjuring.jpeg",
         "scare.jpeg",
-        "loic.jpeg",
+        "loicclown.jpeg",
         "pennywise.jpeg",
         "ring.jpg ",
-        "the-exorcist.jpeg",
-        "loicclown.jpeg"
+        "the-exorcist.jpg",
+        "loic.jpeg"
       ],
       jumperImg: ""
     };

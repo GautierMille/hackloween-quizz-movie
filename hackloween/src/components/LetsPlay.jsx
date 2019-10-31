@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import "./style/LetsPlay.scss";
 import "./style/LetsPlayDesktop.scss";
 import GetMovie from "./GetMovie";
+import { Link } from "react-router-dom";
 
 class LetsPlay extends React.Component {
   constructor(props) {
@@ -60,11 +61,13 @@ class LetsPlay extends React.Component {
         [true, false, true],
         [true, true, true]
       ],
-      questionNumber: questionNumber + 1
+      questionNumber: this.state.questionNumber + 1
     });
     clearInterval(this.blurCase);
     clearInterval(this.counterFunc);
     this.counterFunc = setInterval(this.time, 1000);
+    if (this.state.questionNumber === 10) {
+    }
   };
 
   wrong = () => {
@@ -86,6 +89,16 @@ class LetsPlay extends React.Component {
           displayScore={this.state.ScoreCount}
           Scoring={this.incrementScore}
         />
+        <div className={this.state.questionNumber < 3 ? "continue" : "endgame"}>
+          End of the game: yoour score is: {this.state.ScoreCount} <br />
+          You suck!
+          <br />
+          <Link to="/">
+            <button className="startagain">
+              <p>START AGAIN (and try to make a better score ass***)</p>
+            </button>
+          </Link>
+        </div>
         <p
           id="Countdown"
           id={`${this.state.count}` <= 5 ? "hurryCount" : "count"}
@@ -93,7 +106,6 @@ class LetsPlay extends React.Component {
           Remaining time
           <br /> {this.state.count}
         </p>
-
         <div className="container">
           <div className="blurTab">
             {this.state.blurTab.map(row =>

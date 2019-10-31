@@ -9,6 +9,41 @@
     width: 60vw;
     margin: 0 auto;
   }
+  .continue {
+    display: none;
+  }
+
+  .endgame {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 150vh;
+    color: white;
+    font-size: 200%;
+    z-index: 99;
+    background-color: black;
+    background-size: 100vw 200vh;
+    overflow: hidden;
+  }
+  .startagain {
+    width: 50%;
+    font-size: 30px;
+    margin: 15vh auto;
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 50;
+    font-family: "Creepster", cursive;
+
+    background-color: rgb(180, 22, 22);
+  }
+  p {
+    font-family: "Creepster", cursive;
+    background: linear-gradient(white, rgb(1, 190, 1));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   .blurTab {
     position: absolute;

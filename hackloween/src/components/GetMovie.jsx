@@ -61,9 +61,6 @@ class GetMovie extends React.Component {
       this.goodAnswer();
       this.props.timeReset();
       this.playTrue();
-      if (this.state.questionNumber) === 10{
-
-      }
     } else {
       this.props.wrong();
       this.playFalse();
@@ -89,7 +86,6 @@ class GetMovie extends React.Component {
   render() {
     return (
       <div className="quizz">
-        <div className="endgame">
         <div className={this.state.jumper ? "jumperOn" : "jumperOff"}>
           <img src={jumpScares[3]} />
         </div>
@@ -114,7 +110,6 @@ class GetMovie extends React.Component {
               {this.state.movies[3].title}
             </button>
           </div>
-        </div>
         </div>
       </div>
     );

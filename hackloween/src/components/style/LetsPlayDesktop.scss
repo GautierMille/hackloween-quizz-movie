@@ -6,7 +6,6 @@
     .container {
       position: relative;
       width: 100vw;
-
       .blurTab {
         margin-left: 20vw;
         width: 48vh;
@@ -15,6 +14,23 @@
           width: calc(48vh / 3);
           height: calc(75vh / 4);
         }
+      }
+      .jumperOff img {
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        position: absolute;
+        top: -138px;
+        left: 0;
+      }
+
+      .jumperOn img {
+        z-index: 99;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: -138px;
+        left: 0;
       }
       .quizz {
         width: 100vw;

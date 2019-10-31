@@ -1,30 +1,112 @@
-#letsPlay {
+.letsPlay {
   width: 100%;
   height: 100vh;
   text-align: center;
   background-image: url(/bgHackatonMobile.jpg);
   background-size: 100vw 100vh;
+  .container {
+    position: relative;
+    width: 60vw;
+    margin: 0 auto;
+  }
+  .continue {
+    display: none;
+  }
 
-  #moviePict {
+  .endgame {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh - 48px);
+    color: white;
+    font-size: 200%;
+    z-index: 99;
+    background-color: black;
+    background-size: 100vw 100vh;
+    overflow: hidden;
+  }
+  .startagain {
+    width: 50%;
+    font-size: 30px;
+    margin: 7vh auto;
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 50;
+    font-family: "Creepster", cursive;
+
+    background-color: rgb(180, 22, 22);
+  }
+  p {
+    font-family: "Creepster", cursive;
+    background: linear-gradient(white, rgb(1, 190, 1));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .blurTab {
+    position: absolute;
+    margin: auto;
+    z-index: 90;
+    width: 60vw;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .quizz {
+    position: absolute;
+    z-index: 89;
     margin: auto;
     width: 60vw;
     height: 90vw;
-    background-image: url("/zombie.jpeg");
-    background-size: 100% 100%;
+    div img {
+      height: 90vw;
+    }
+  }
+  .blur {
+    width: calc(60vw / 3);
+    height: calc(90vw / 4);
+    background: rgb(20, 20, 20);
+    z-index: 90;
+  }
+  .noBlur {
+    width: calc(60vw / 3);
+    height: calc(90vw / 4);
+    background: rgba(20, 20, 20, 0);
+    z-index: 90;
   }
 
-  #answer {
-    position: absolute;
-    bottom: 5px;
+  #count {
+    color: whitesmoke;
+    font-size: 25px;
+    margin: 15px;
+  }
+  #hurryCount {
+    font-size: 35px;
+    margin: 3px;
+    color: red;
+  }
+
+  .answer {
     display: flex;
     flex-direction: column;
     width: 100vw;
+    margin-left: -20vw;
+    margin-top: 5vh;
 
     .answerCase {
-      width: 45vw;
+      font-family: "Creepster", cursive;
+      width: 45%;
       margin: 1.5vw;
       height: 10vh;
       opacity: 0.8;
     }
   }
+}
+
+img {
+  width: 100%;
+  height: 80%;
+  display: block;
+  margin: 0 auto;
 }

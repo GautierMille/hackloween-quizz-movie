@@ -4,9 +4,12 @@
   text-align: center;
   background-image: url(/bgHackatonMobile.jpg);
   background-size: 100vw 100vh;
+  z-index: 50;
 
   .title {
     padding-top: 10vh;
+    z-index: 50;
+    position: relative;
   }
 
   h1 {
@@ -15,6 +18,9 @@
     background: linear-gradient(red, #333);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 50;
+    text-shadow: 0px 10px 0px white;
   }
   button {
     width: 50%;
@@ -24,6 +30,8 @@
     border-radius: 5px;
     padding: 10px;
     border: 2px solid rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 50;
   }
 
   p {
@@ -38,6 +46,28 @@
     background: linear-gradient(white, rgb(1, 190, 1));
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-top: 25vh;
+  }
+
+  .blood {
+    height: 0%;
+    width: 100%;
+    position: absolute;
+    top: -50vh;
+    animation-name: bloodquicoule;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+  }
+  .bloodimg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+}
+@keyframes bloodquicoule {
+  from {
+    top: -50vh;
+  }
+  to {
+    top: 0vh;
   }
 }

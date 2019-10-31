@@ -87,7 +87,7 @@ class GetMovie extends React.Component {
     return (
       <div>
         <div className={this.state.jumper ? "jumperOn" : "jumperOff"}>
-          <img src={jumpScares[3]} />
+          <img src={jumpScares[3]} alt={jumpScares[3]} />
         </div>
         <div className="quizz">
           <MovieCard

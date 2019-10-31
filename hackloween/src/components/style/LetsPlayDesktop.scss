@@ -1,5 +1,8 @@
 @media screen and (min-width: 760px) {
   .letsPlay {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     .container {
       position: relative;
       width: 100vw;

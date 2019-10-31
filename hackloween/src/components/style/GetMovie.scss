@@ -1,9 +1,17 @@
-.jumperOff {
+.jumperOff img {
+  width: 100vw;
+  height: 100vh;
   display: none;
+  position: absolute;
+  top: -138px;
+  left: 0;
 }
 
-.jumperOn {
+.jumperOn img {
   z-index: 99;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  top: 0px;
+  top: -138px;
+  left: 0;
 }

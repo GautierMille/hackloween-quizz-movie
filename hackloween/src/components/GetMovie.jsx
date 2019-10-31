@@ -85,29 +85,32 @@ class GetMovie extends React.Component {
 
   render() {
     return (
-      <div className="quizz">
-        <MovieCard
-          posterUrl={this.state.movies[this.state.goodAnswer].posterUrl}
-        />
+      <div>
         <div className={this.state.jumper ? "jumperOn" : "jumperOff"}>
           <img src={jumpScares[3]} />
         </div>
-        <div className="answer">
-          <div className="answerTab">
-            <button onClick={this.checkAnswer} className="answerCase">
-              {this.state.movies[0].title}
-            </button>
-            <button onClick={this.checkAnswer} className="answerCase">
-              {this.state.movies[1].title}
-            </button>
-          </div>
-          <div className="answerTab">
-            <button onClick={this.checkAnswer} className="answerCase">
-              {this.state.movies[2].title}
-            </button>
-            <button onClick={this.checkAnswer} className="answerCase">
-              {this.state.movies[3].title}
-            </button>
+        <div className="quizz">
+          <MovieCard
+            posterUrl={this.state.movies[this.state.goodAnswer].posterUrl}
+          />
+
+          <div className="answer">
+            <div className="answerTab">
+              <button onClick={this.checkAnswer} className="answerCase">
+                {this.state.movies[0].title}
+              </button>
+              <button onClick={this.checkAnswer} className="answerCase">
+                {this.state.movies[1].title}
+              </button>
+            </div>
+            <div className="answerTab">
+              <button onClick={this.checkAnswer} className="answerCase">
+                {this.state.movies[2].title}
+              </button>
+              <button onClick={this.checkAnswer} className="answerCase">
+                {this.state.movies[3].title}
+              </button>
+            </div>
           </div>
         </div>
       </div>

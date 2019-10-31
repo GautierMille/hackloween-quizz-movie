@@ -15,24 +15,28 @@ class LetsPlay extends React.Component {
         [true, false, true],
         [true, true, true]
       ],
-      count: 20
+      count: 20,
+      launchfunction: true
     };
     this.counterFunc = setInterval(this.time, 1000);
   }
 
+  blurCase = () => {
+    setInterval(() => {
+      let i = Math.floor(Math.random() * 4);
+      let j = Math.floor(Math.random() * 3);
+      this.blurFunction(i, j);
+    }, 2000);
+  };
+
   componentDidMount() {
-    for (let k = 2000; k <= 20000; k = k + 2000) {
-      setTimeout(() => {
-        let i = Math.floor(Math.random() * 4);
-        let j = Math.floor(Math.random() * 3);
-        this.blurFunction(i, j);
-      }, k);
-    }
+    this.blurCase();
   }
 
   time = () => {
     if (this.state.count <= 0) {
       clearInterval(this.counterFunc);
+      clearInterval(this.blurCase);
       return;
     }
     this.setState({ count: this.state.count - 1 });
@@ -46,8 +50,16 @@ class LetsPlay extends React.Component {
 
   incrementScore = () => {
     this.setState({
-      ScoreCount: this.state.ScoreCount + this.state.count
+      ScoreCount: this.state.ScoreCount + this.state.count,
+      launchfunction: true,
+      blurTab: [
+        [true, true, true],
+        [true, true, true],
+        [true, false, true],
+        [true, true, true]
+      ]
     });
+    clearInterval(this.blurCase);
     clearInterval(this.counterFunc);
     this.counterFunc = setInterval(this.time, 1000);
   };

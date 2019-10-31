@@ -4,7 +4,6 @@
   text-align: center;
   background-image: url(/bgHackatonMobile.jpg);
   background-size: 100vw 100vh;
-  z-index: 50;
 
   .title {
     padding-top: 10vh;
@@ -49,18 +48,21 @@
   }
 
   .blood {
-    height: 0%;
+    height: 100%;
     width: 100%;
     position: absolute;
     top: -50vh;
     animation-name: bloodquicoule;
     animation-duration: 10s;
     animation-fill-mode: forwards;
+    z-index: 45;
   }
   .bloodimg {
     width: 100%;
     position: absolute;
     top: 0;
+    z-index: 45;
+    display: block;
   }
 }
 @keyframes bloodquicoule {

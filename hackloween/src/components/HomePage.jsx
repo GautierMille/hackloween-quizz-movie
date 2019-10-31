@@ -6,7 +6,7 @@ function HomePage() {
   return (
     <div className="homePage">
       <div className="blood">
-        <img src="blood.png" className="bloodimg" />
+        <img src="blood.png" className="bloodimg" alt="blood" />
       </div>
       <div className="title">
         <h1>Horror Movie</h1>

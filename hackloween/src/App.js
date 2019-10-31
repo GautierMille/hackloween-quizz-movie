@@ -1,5 +1,4 @@
 import React from "react";
-import GetMovie from "./components/GetMovie";
 import "./App.scss";
 import { Switch, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";

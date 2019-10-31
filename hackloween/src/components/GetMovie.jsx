@@ -61,6 +61,9 @@ class GetMovie extends React.Component {
       this.goodAnswer();
       this.props.timeReset();
       this.playTrue();
+      if (this.state.questionNumber) === 10{
+
+      }
     } else {
       this.props.wrong();
       this.playFalse();
@@ -86,12 +89,14 @@ class GetMovie extends React.Component {
   render() {
     return (
       <div className="quizz">
-        <MovieCard
-          posterUrl={this.state.movies[this.state.goodAnswer].posterUrl}
-        />
+        <div className="endgame">
         <div className={this.state.jumper ? "jumperOn" : "jumperOff"}>
           <img src={jumpScares[3]} />
         </div>
+        <MovieCard
+          posterUrl={this.state.movies[this.state.goodAnswer].posterUrl}
+        />
+
         <div className="answer">
           <div className="answerTab">
             <button onClick={this.checkAnswer} className="answerCase">
@@ -109,6 +114,7 @@ class GetMovie extends React.Component {
               {this.state.movies[3].title}
             </button>
           </div>
+        </div>
         </div>
       </div>
     );

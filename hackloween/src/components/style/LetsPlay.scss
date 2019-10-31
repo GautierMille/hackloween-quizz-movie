@@ -32,11 +32,13 @@
     width: calc(60vw / 3);
     height: calc(90vw / 4);
     background: rgb(20, 20, 20);
+    z-index: 90;
   }
   .noBlur {
     width: calc(60vw / 3);
     height: calc(90vw / 4);
     background: rgba(20, 20, 20, 0);
+    z-index: 90;
   }
 
   #count {

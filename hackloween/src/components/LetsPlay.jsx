@@ -17,7 +17,8 @@ class LetsPlay extends React.Component {
         [true, true, true]
       ],
       count: 20,
-      launchfunction: true
+      launchfunction: true,
+      questionNumber: 0
     };
     this.counterFunc = setInterval(this.time, 1000);
   }
@@ -58,7 +59,8 @@ class LetsPlay extends React.Component {
         [true, true, true],
         [true, false, true],
         [true, true, true]
-      ]
+      ],
+      questionNumber: questionNumber + 1
     });
     clearInterval(this.blurCase);
     clearInterval(this.counterFunc);

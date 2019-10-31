@@ -27,7 +27,8 @@ class GetMovie extends React.Component {
         "loic.jpeg",
         "pennywise.jpeg",
         "ring.jpg ",
-        "the-exorcist.jpeg"
+        "the-exorcist.jpeg",
+        "loicclown.jpeg"
       ],
       jumperImg: ""
     };
@@ -74,8 +75,9 @@ class GetMovie extends React.Component {
 
   playFalse() {
     const falseAnswer = new Audio("/sounds/sheep.mp3");
-    const a = Math.floor(Math.random() * 5);
+    const a = Math.floor(Math.random() * 7);
     this.setState({ jumperImg: this.state.jumpScares[a] });
+    console.log(this.state.jumperImg);
     const jumperOn = !this.state.jumper;
     this.setState({ jumper: jumperOn });
     setTimeout(() => {

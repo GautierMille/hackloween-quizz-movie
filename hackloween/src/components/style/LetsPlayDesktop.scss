@@ -1,0 +1,33 @@
+@media screen and (min-width: 640px) {
+  .letsPlay {
+    .container {
+      position: relative;
+      width: 100vw;
+
+      .blurTab {
+        margin-left: 20vw;
+        width: 48vh;
+        .blur,
+        .noBlur {
+          width: calc(48vh / 3);
+          height: calc(75vh / 4);
+        }
+      }
+      .quizz {
+        width: 100vw;
+        height: auto;
+        display: flex;
+
+        div img {
+          margin-left: 20vw;
+          width: 48vh;
+          height: 75vh;
+        }
+        .answer {
+          width: 48vw;
+          margin: 10vh 0;
+        }
+      }
+    }
+  }
+}

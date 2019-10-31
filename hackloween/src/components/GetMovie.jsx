@@ -2,6 +2,16 @@ import React from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
 import "./style/LetsPlay.scss";
+import "./style/GetMovie.scss";
+
+const jumpScares = [
+  "conjuring.jpeg",
+  "scary.jpeg",
+  "loic.jpeg",
+  "pennywise.jpeg ",
+  "ring.jpeg ",
+  "the-exorcist.jpeg"
+];
 
 let sampleMovie = [
   { id: "" },
@@ -18,7 +28,8 @@ class GetMovie extends React.Component {
       movies: sampleMovie,
       answers: [sampleMovie, sampleMovie, sampleMovie, sampleMovie],
       goodAnswer: 0,
-      questionNumber: 0
+      questionNumber: 0,
+      jumper: false
     };
   }
   componentDidMount() {
@@ -49,14 +60,26 @@ class GetMovie extends React.Component {
       this.getMovie();
       this.goodAnswer();
       this.props.timeReset();
+      this.playTrue();
     } else {
       this.props.wrong();
       this.playFalse();
     }
   };
 
+  playTrue() {
+    const trueAnswer = new Audio("/sounds/wow.mp3");
+    trueAnswer.play();
+  }
+
   playFalse() {
-    const falseAnswer = new Audio("/sounds/wrong.mp3");
+    const falseAnswer = new Audio("/sounds/sheep.mp3");
+    const jumperOn = !this.state.jumper;
+    this.setState({ jumper: jumperOn });
+    setTimeout(() => {
+      const jumperOn = !this.state.jumper;
+      this.setState({ jumper: jumperOn });
+    }, 2000);
     falseAnswer.play();
   }
 
@@ -66,7 +89,9 @@ class GetMovie extends React.Component {
         <MovieCard
           posterUrl={this.state.movies[this.state.goodAnswer].posterUrl}
         />
-
+        <div className={this.state.jumper ? "jumperOn" : "jumperOff"}>
+          <img src={jumpScares[3]} />
+        </div>
         <div className="answer">
           <div className="answerTab">
             <button onClick={this.checkAnswer} className="answerCase">

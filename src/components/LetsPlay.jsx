@@ -90,7 +90,7 @@ class LetsPlay extends React.Component {
           Scoring={this.incrementScore}
         />
         <div className={this.state.questionNumber < 5 ? "continue" : "endgame"}>
-          End of the game: yoour score is: {this.state.ScoreCount} <br />
+          End of the game: your score is: {this.state.ScoreCount} <br />
           You suck!
           <br />
           <Link to="/">

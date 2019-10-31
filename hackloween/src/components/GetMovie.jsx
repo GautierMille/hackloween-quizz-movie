@@ -4,15 +4,6 @@ import MovieCard from "./MovieCard";
 import "./style/LetsPlay.scss";
 import "./style/GetMovie.scss";
 
-const jumpScares = [
-  "conjuring.jpeg",
-  "scary.jpeg",
-  "loic.jpeg",
-  "pennywise.jpeg ",
-  "ring.jpeg ",
-  "the-exorcist.jpeg"
-];
-
 let sampleMovie = [
   { id: "" },
   { title: "" },
@@ -29,7 +20,16 @@ class GetMovie extends React.Component {
       answers: [sampleMovie, sampleMovie, sampleMovie, sampleMovie],
       goodAnswer: 0,
       questionNumber: 0,
-      jumper: false
+      jumper: false,
+      jumpScares: [
+        "conjuring.jpeg",
+        "scare.jpeg",
+        "loic.jpeg",
+        "pennywise.jpeg",
+        "ring.jpg ",
+        "the-exorcist.jpeg"
+      ],
+      jumperImg: ""
     };
   }
   componentDidMount() {
@@ -74,20 +74,28 @@ class GetMovie extends React.Component {
 
   playFalse() {
     const falseAnswer = new Audio("/sounds/sheep.mp3");
+    const a = Math.floor(Math.random() * 5);
+    this.setState({ jumperImg: this.state.jumpScares[a] });
     const jumperOn = !this.state.jumper;
     this.setState({ jumper: jumperOn });
     setTimeout(() => {
       const jumperOn = !this.state.jumper;
       this.setState({ jumper: jumperOn });
-    }, 2000);
+    }, 1000);
     falseAnswer.play();
   }
+
+  // randomJumpScare() {
+  //   const a = Math.floor(Math.random() * 5);
+  //   console.log(a);
+  //   return this.state.jumpScares[a];
+  // }
 
   render() {
     return (
       <div>
         <div className={this.state.jumper ? "jumperOn" : "jumperOff"}>
-          <img src={jumpScares[3]} alt={jumpScares[3]} />
+          <img src={this.state.jumperImg} />
         </div>
         <div className="quizz">
           <MovieCard

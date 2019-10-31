@@ -126,9 +126,3 @@ class GetMovie extends React.Component {
   }
 }
 export default GetMovie;
-
-/*<button>{this.state.movies[0].title}</button>
-        <button>{this.state.movies[1].title}</button>
-        <button>{this.state.movies[2].title}</button>
-        <button>{this.state.movies[3].title}</button>
-      </div>*/

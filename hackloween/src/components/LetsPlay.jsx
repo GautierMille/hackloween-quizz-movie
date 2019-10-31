@@ -75,7 +75,6 @@ class LetsPlay extends React.Component {
     let arr = this.state.blurTab;
     arr[i][j] = false;
     this.setState({ blurTab: arr });
-    console.log(i, j);
   };
 
   render() {
